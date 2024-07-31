@@ -1,7 +1,22 @@
-import React from 'react'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import SignUp from "./pages/SignUp";
+import SignIn from "./pages/SignIn";
+import Profile from "./pages/Profile";
+import CafeDetails from "./pages/CafeDetails";
+import CafeList from "./pages/CafeList";
 
 export default function App() {
   return (
-    <div>App</div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
+        <Route path="/profile" element={<Profile />} />
+        <Route path="/cafe-details" element={<CafeDetails />} />
+        <Route path="/cafe-list" element={<CafeList />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
